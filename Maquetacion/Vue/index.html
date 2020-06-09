@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Maquitación para el Master en FrameWorks JavaScript</title>
+
+        <!--Hoja de estilo-->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <script type="text/javascript">
+           window.addEventListener("load",function(){
+            var template = document.getElementById("article-template");
+            var articles = document.getElementById("articles");
+
+            for (i=1; i <= 5; i++) {
+                var clonado = template.cloneNode(true);
+                //Eliminación de atributos
+                clonado.removeAttribute("id");
+                //Añadimos texto a un atribulo
+                var h2 = clonado.getElementsByTagName("h2")[0];
+                h2.innerHTML = h2.textContent + ' ' + i;
+                //Clonas los artículos
+                articles.appendChild(clonado);
+            }
+           
+          });
+        </script>
+
+    </head>
+    <body>
+        <header id="header">
+            <div class="center">
+                <!--Logo-->
+                <div id="logo">
+                    <img src="assets/images/logo-vuejs.svg" class="app-logo" alt="logotipo">
+                    <span id="brand">
+                        <strong>Curso</strong> Vue
+                    </span>
+                </div>
+                <!--Menu-->
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="formulario.html">Formulario</a>
+                        </li>
+                        <li>
+                            <a href="#">Pagina 1</a>
+                        </li>
+                        <li>
+                            <a href="">Pagina 2</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="clearfix"></div>
+            </div>
+        </header>
+        <div id="slider" class="slider-big">
+            <h1>Bienvenido al curso de VUEJS</h1>
+            <a href="#" class="btn-white">Ir al blog</a>
+        </div>
+
+        <div class="center">
+            <section id="content">
+                <h2 class="subheader">Últimos artículos</h2>
+                <!--Listado-->
+                <div id="articles">
+                    <article class="article-item" id="article-template">
+                        <div class="image-wrap">
+                            <img src="http://coolvibe.com/wp-content/uploads/2011/05/battle-scene.jpg" alt="enanos" />
+                        </div>
+                        <h2>Articulo de prueba</h2>
+                        <span class="date">
+                            hace 5 minutos
+                        </span>
+                        <a href="#">Leer más</a>
+                        <div class="clearfix"></div>
+                    </article>
+                    <!--Añadir articulo de JS-->
+
+                </div>
+            </section>
+            
+           
+
+            <aside id="sidebar">
+                <div id="nav-blog" class="sidebar-item">
+                    <h3>Puedes hacer esto</h3>
+                    <a href="#" class="btn btn-success">Crear artículo</a>
+                </div>
+                <div id="search" class="sidebar-item">
+                    <h3>Buscador</h3>
+                    <p>Encuentra el artículo que busca</p>
+                   <form>
+                       <input type="text" name="search">
+                       <input type="submit" name="submit" class="btn" value="Buscar">
+                   </form>
+                </div>
+            </aside>
+            <div class="clearfix"></div>
+        </div>
+        
+
+        <footer id="footer">
+            <div class="center">
+                <p>
+                    &copy; Master en Framewoks para Js
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
