@@ -33,7 +33,7 @@ class Peliculas extends Component{
             })
         }
 
-        favorita = (pelicula) => {
+        favorita = (pelicula) => (event) => {
             console.log("Favorita");
             console.log(pelicula);
           
