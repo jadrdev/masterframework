@@ -7,8 +7,9 @@ import Header from './components/Header';
 import Slider from './components/Slider';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
-import SeccionPruebas from './components/SeccionPruebas';
-import Peliculas from './components/Peliculas';
+//import SeccionPruebas from './components/SeccionPruebas';
+//import Peliculas from './components/Peliculas';
+import Router from './router';
 
 
 
@@ -28,7 +29,11 @@ function App() {
 
       <div className="center">
 
-        <Peliculas></Peliculas>
+          {/*<Peliculas></Peliculas>*/}
+
+          <Router></Router>
+
+
        
         <Sidebar />
         <div className="clearfix"></div>
