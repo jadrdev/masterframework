@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SeccionPruebas from './components/SeccionPruebas'
 import MiComponente from './components/MiComponente';
 import Peliculas from './components/Peliculas';
+import error from "./components/error";
 
 class Router extends Component{
     render() {
@@ -11,9 +12,22 @@ class Router extends Component{
             <BrowserRouter>
                     {/* Configurar rutas */}
                     <Switch>
-                        <Route exa path="/" component={Peliculas} />
-                        <Route path="/prueba-ruta" component={SeccionPruebas} />
-                        <Route path="/segunda-ruta" component={MiComponente} />
+                        <Route exact path="/" component={Peliculas} />
+                        <Route exact path="/prueba-ruta" component={SeccionPruebas} />
+                        <Route exact path="/segunda-ruta" component={MiComponente} />
+
+                        <Route exact path="/pagina-1" render={() => (
+                            <React.Fragment>
+                            <h1> Hola Mundo </h1>
+                            <MiComponente saludo="Hola Amigo" />
+
+                            </React.Fragment>
+                        )} />
+
+
+
+                        <Route component={error} />
+
                     </Switch>
                 </BrowserRouter>
         );
@@ -21,4 +35,4 @@ class Router extends Component{
 
 }
 
-export default React;
+export default Router;
